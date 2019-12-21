@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "greengoflix",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authgreengoflix70a59dda",
+            "Outputs.UserPoolId"
+        ]
+    }
+}

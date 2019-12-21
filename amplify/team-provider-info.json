@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-greengoflix-dev-102714-authRole",
+            "UnauthRoleArn": "arn:aws:iam::987092829714:role/amplify-greengoflix-dev-102714-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::987092829714:role/amplify-greengoflix-dev-102714-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "amplify-greengoflix-dev-102714-deployment",
+            "UnauthRoleName": "amplify-greengoflix-dev-102714-unauthRole",
+            "StackName": "amplify-greengoflix-dev-102714",
+            "StackId": "arn:aws:cloudformation:us-west-2:987092829714:stack/amplify-greengoflix-dev-102714/8e4a6dd0-241f-11ea-a88c-022add0a84f2",
+            "AmplifyAppId": "d2dbaeeta5kdnr"
+        },
+        "categories": {
+            "auth": {
+                "greengoflix70a59dda": {}
+            }
+        }
+    }
+}

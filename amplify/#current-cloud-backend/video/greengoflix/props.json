@@ -1,0 +1,26 @@
+{
+    "shared": {
+        "resourceName": "greengoflix",
+        "bucketInput": "greengoflix-dev-input-zzurl0wh",
+        "bucketOutput": "greengoflix-dev-output-zzurl0wh",
+        "bucket": "amplify-greengoflix-dev-102714-deployment"
+    },
+    "template": {
+        "name": "Amplify_Video_Ott_Hls_Ts_Avc_Aac.json",
+        "arn": "arn:aws:mediaconvert:us-west-2:987092829714:jobTemplates/Amplify_Video_Ott_Hls_Ts_Avc_Aac"
+    },
+    "contentDeliveryNetwork": {
+        "enableDistribution": false
+    },
+    "cms": {
+        "editAPI": true
+    },
+    "parameters": {
+        "authRoleName": {
+            "Ref": "AuthRoleName"
+        },
+        "unauthRoleName": {
+            "Ref": "UnauthRoleName"
+        }
+    }
+}

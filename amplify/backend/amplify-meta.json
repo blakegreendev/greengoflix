@@ -1,0 +1,105 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "amplify-greengoflix-dev-102714-authRole",
+			"UnauthRoleArn": "arn:aws:iam::987092829714:role/amplify-greengoflix-dev-102714-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::987092829714:role/amplify-greengoflix-dev-102714-authRole",
+			"Region": "us-west-2",
+			"DeploymentBucketName": "amplify-greengoflix-dev-102714-deployment",
+			"UnauthRoleName": "amplify-greengoflix-dev-102714-unauthRole",
+			"StackName": "amplify-greengoflix-dev-102714",
+			"StackId": "arn:aws:cloudformation:us-west-2:987092829714:stack/amplify-greengoflix-dev-102714/8e4a6dd0-241f-11ea-a88c-022add0a84f2",
+			"AmplifyAppId": "d2dbaeeta5kdnr"
+		}
+	},
+	"auth": {
+		"greengoflix70a59dda": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-greengoflix-dev-102714-deployment/amplify-cfn-templates/auth/greengoflix70a59dda-cloudformation-template.yml",
+				"logicalId": "authgreengoflix70a59dda"
+			},
+			"lastPushTimeStamp": "2019-12-21T18:35:40.357Z",
+			"output": {
+				"AppClientSecret": "1skhrllulkg32bjs2arn1am3qm6430l04koi0mrr5775691er7js",
+				"UserPoolId": "us-west-2_FSVdrLZEl",
+				"AppClientIDWeb": "3pusgjp2tq680s3eckp63e16mb",
+				"AppClientID": "1rltnofj7cv40l5uj9531pd7k3",
+				"IdentityPoolId": "us-west-2:048fcc09-0ec3-4842-a108-3f34be11df97",
+				"IdentityPoolName": "greengoflix70a59dda_identitypool_70a59dda__dev",
+				"UserPoolName": "greengoflix70a59dda_userpool_70a59dda"
+			},
+			"lastPushDirHash": "HvC8AzgnK52DVQ7wnr0vtIGsKuo="
+		},
+		"userPoolGroups": {
+			"service": "Cognito-UserPool-Groups",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "auth",
+					"resourceName": "greengoflix70a59dda",
+					"attributes": [
+						"UserPoolId",
+						"AppClientIDWeb",
+						"AppClientID",
+						"IdentityPoolId"
+					]
+				}
+			],
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-greengoflix-dev-102714-deployment/amplify-cfn-templates/auth/template.json",
+				"logicalId": "authuserPoolGroups"
+			},
+			"lastPushTimeStamp": "2019-12-21T18:35:40.357Z",
+			"output": {
+				"AdminGroupRole": "arn:aws:iam::987092829714:role/us-west-2_FSVdrLZEl-AdminGroupRole"
+			},
+			"lastPushDirHash": "h709BlEO+Ge9cqGGL5rEdnBfhbE="
+		}
+	},
+	"api": {
+		"greengoflix": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authgreengoflix70a59dda"
+						}
+					}
+				},
+				"GraphQLAPIIdOutput": "vt37sv6th5eqfmz3czgmrvdc74",
+				"GraphQLAPIEndpointOutput": "https://jowlfyzyd5dgzhv5ydjmv4dqzi.appsync-api.us-west-2.amazonaws.com/graphql"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-greengoflix-dev-102714-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apigreengoflix"
+			},
+			"lastPushTimeStamp": "2019-12-21T18:35:40.357Z",
+			"lastPushDirHash": "LvRHZpJc0slIxmeD7y3vMphSqf0="
+		}
+	},
+	"video": {
+		"greengoflix": {
+			"service": "video",
+			"serviceType": "video-on-demand",
+			"providerPlugin": "awscloudformation",
+			"sha": "5012f24639a00411710902354544443b90bad20c",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-greengoflix-dev-102714-deployment/amplify-cfn-templates/video/greengoflix-vod-workflow.template",
+				"logicalId": "videogreengoflix"
+			},
+			"lastPushTimeStamp": "2019-12-21T18:35:40.357Z",
+			"output": {
+				"oVODOutputS3": "greengoflix-dev-output-zzurl0wh",
+				"oVODInputS3": "greengoflix-dev-input-zzurl0wh"
+			},
+			"lastPushDirHash": "MERc49KXK3AO8d4uhCBirmhgmws="
+		}
+	}
+}

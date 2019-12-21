@@ -1,0 +1,14 @@
+{
+    "CreateAPIKey": 0,
+    "AppSyncApiName": "greengoflix",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authgreengoflix70a59dda",
+            "Outputs.UserPoolId"
+        ]
+    },
+    "S3DeploymentBucket": "amplify-greengoflix-dev-102714-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/796576b4d099f5b1f0896665934871e3e17da313"
+}
